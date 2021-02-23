@@ -9,6 +9,8 @@ defmodule ZanicpayWeb.Router do
     pipe_through :api
 
     get "/:filename", WelcomeController, :index
+
+    post "/user", UserController, :create
   end
 
   # Enables LiveDashboard only for development

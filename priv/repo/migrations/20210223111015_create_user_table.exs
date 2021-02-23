@@ -2,7 +2,7 @@ defmodule Zanicpay.Repo.Migrations.CreateUserTable do
   use Ecto.Migration
 
   def change do
-    create table :users do
+    create table :user do
       add :name, :string
       add :age, :integer
       add :email, :string
@@ -12,7 +12,7 @@ defmodule Zanicpay.Repo.Migrations.CreateUserTable do
       timestamps()
     end
 
-    create unique_index(:users, [:email])
-    create unique_index(:users, [:nickname])
+    create unique_index(:user, [:email])
+    create unique_index(:user, [:nickname])
   end
 end

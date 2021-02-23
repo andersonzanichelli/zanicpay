@@ -5,6 +5,7 @@ To start your Phoenix server:
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Command to create the db `mix ecto.create`
+  * Command to drop the db `mix ecto.drop`
   * Command to generate the migration `mix ecto.gen.migration create_user_table`
   * After the migration file filled: `mix ecto.migrate`
   * Start Phoenix endpoint with `mix phx.server`

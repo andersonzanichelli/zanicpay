@@ -18,6 +18,10 @@ config :zanicpay, ZanicpayWeb.Endpoint,
   pubsub_server: Zanicpay.PubSub,
   live_view: [signing_salt: "mE0oqMqg"]
 
+  config :zanicpay, Zanicpay.Repo,
+    migration_primary_key: [type: :binary_id],
+    migration_foreign_key: [type: :binary_id]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
