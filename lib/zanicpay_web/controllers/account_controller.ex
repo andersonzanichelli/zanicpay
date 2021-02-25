@@ -3,6 +3,7 @@ defmodule ZanicpayWeb.AccountController do
   use ZanicpayWeb, :controller
 
   alias Zanicpay.Account
+  alias Zanicpay.Account.Transaction.Response, as: TransactionResponse
 
   action_fallback ZanicpayWeb.FallbackController
 
@@ -19,6 +20,14 @@ defmodule ZanicpayWeb.AccountController do
       conn
       |> put_status(:ok)
       |> render("update.json", account: account)
+    end
+  end
+
+  def transaction(conn, params) do
+    with {:ok, %TransactionResponse{} = transaction} <- Zanicpay.transaction(params) do
+      conn
+      |> put_status(:ok)
+      |> render("transaction.json", transaction: transaction)
     end
   end
 
