@@ -11,6 +11,10 @@ defmodule ZanicpayWeb.Router do
     get "/:filename", WelcomeController, :index
 
     post "/user", UserController, :create
+
+    post "/account/:id/deposit", AccountController, :deposit
+    post "/account/:id/withdraw", AccountController, :withdraw
+    
   end
 
   # Enables LiveDashboard only for development
