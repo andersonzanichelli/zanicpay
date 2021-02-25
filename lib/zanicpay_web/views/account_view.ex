@@ -1,6 +1,7 @@
 defmodule ZanicpayWeb.AccountView do
 
-  alias Zanicpay.{Account}
+  alias Zanicpay.Account
+  alias Zanicpay.Account.Transaction.Response, as: TransactionResponse
 
   def render("update.json", %{account: %Account{id: account_id, balance: balance}} ) do
     %{
@@ -8,6 +9,22 @@ defmodule ZanicpayWeb.AccountView do
       account: %{
         id: account_id,
         balance: balance
+      }
+    }
+  end
+
+  def render("transaction.json", %{transaction: %TransactionResponse{to_account: to_account, from_account: from_account}} ) do
+    %{
+      message: "Transaction done successfuly",
+      transaction: %{
+        from_account: %{
+          id: from_account.id,
+          balance: from_account.balance
+        },
+        to_account: %{
+          id: to_account.id,
+          balance: to_account.balance
+        }
       }
     }
   end

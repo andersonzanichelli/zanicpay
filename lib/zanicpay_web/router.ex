@@ -14,7 +14,8 @@ defmodule ZanicpayWeb.Router do
 
     post "/account/:id/deposit", AccountController, :deposit
     post "/account/:id/withdraw", AccountController, :withdraw
-    
+    post "/account/transaction", AccountController, :transaction
+
   end
 
   # Enables LiveDashboard only for development
