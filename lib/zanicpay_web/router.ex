@@ -1,8 +1,14 @@
 defmodule ZanicpayWeb.Router do
   use ZanicpayWeb, :router
 
+  import Plug.BasicAuth
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  pipeline :auth do
+    plug :basic_auth, Application.compile_env(:zanicpay, :basic_auth)
   end
 
   scope "/api", ZanicpayWeb do
@@ -11,6 +17,11 @@ defmodule ZanicpayWeb.Router do
     get "/:filename", WelcomeController, :index
 
     post "/user", UserController, :create
+
+  end
+
+  scope "/api", ZanicpayWeb do
+    pipe_through [:api, :auth]
 
     post "/account/:id/deposit", AccountController, :deposit
     post "/account/:id/withdraw", AccountController, :withdraw
