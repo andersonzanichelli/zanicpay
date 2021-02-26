@@ -9,6 +9,7 @@ To start your Phoenix server:
   * Command to generate the migration `mix ecto.gen.migration create_user_table`
   * After the migration file filled: `mix ecto.migrate`
   * Start Phoenix endpoint with `mix phx.server`
+  * To view coverage `mix test --cover` or `mix coveralls.html`
 
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
