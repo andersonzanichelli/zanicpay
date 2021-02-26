@@ -1,6 +1,6 @@
 defmodule ZanicpayWeb.UserViewTest do
 
-  use ZanicpayWeb.ConnCase
+  use ZanicpayWeb.ConnCase, async: true
 
   import Phoenix.View
 

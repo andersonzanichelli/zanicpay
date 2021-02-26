@@ -1,6 +1,6 @@
 defmodule Zanicpay.User.CreateTest do
 
-  use Zanicpay.DataCase
+  use Zanicpay.DataCase, async: true
 
   alias Zanicpay.User
   alias Zanicpay.User.Create

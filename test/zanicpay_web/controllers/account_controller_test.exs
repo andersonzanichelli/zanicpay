@@ -1,6 +1,6 @@
 defmodule ZanicpayWeb.AccountControllerTest do
 
-  use ZanicpayWeb.ConnCase
+  use ZanicpayWeb.ConnCase, async: true
 
   alias Zanicpay.{Account, User}
 
